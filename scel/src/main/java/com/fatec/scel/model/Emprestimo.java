@@ -1,5 +1,6 @@
 package com.fatec.scel.model;
 import java.text.DateFormat;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -9,7 +10,8 @@ import javax.validation.constraints.NotEmpty;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
-@Entity
+
+@Entity(name = "Emprestimo")
 public class Emprestimo {
 	
 	@Id

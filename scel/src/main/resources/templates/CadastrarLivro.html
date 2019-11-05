@@ -8,6 +8,7 @@
 	function consulta() {
 		window.open("consulta");
 	}
+	console.log("funciona booostaaaaa")
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -24,19 +25,22 @@
 		<div>header</div>
 	</header>
 	<div class="container my-5">
-	<br/>
-	
+		<br />
+
 		<h3>Cadastrar Livro</h3>
 		<div class="card">
 			<div class="card-body">
 				<div class="col-md-8">
-					<form action="#" th:action="@{/livros/save}" th:object="${livro}" 	method="post">
+					<form action="#" th:action="@{/livros/save}" th:object="${livro}"
+						method="post">
 						<div class="row">
 
 							<div class="form-group col-md-4">
-								<label for="isbn" class="col-form-label">ISBN</label> 
-								<input type="text" th:field="*{isbn}" class="form-control" id="isbn" placeholder="isbn"> 
-								<span th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}" class="text-danger"> </span>
+								<label for="isbn" class="col-form-label">ISBN</label> <input
+									type="text" th:field="*{isbn}" class="form-control" id="isbn"
+									placeholder="isbn"> <span
+									th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}"
+									class="text-danger"> </span>
 							</div>
 						</div>
 						<div class="row">
@@ -47,8 +51,8 @@
 									th:if="${#fields.hasErrors('autor')}" th:errors="*{autor}"
 									class="text-danger"> </span>
 							</div>
-							</div>
-						<div class="row">	
+						</div>
+						<div class="row">
 							<div class="form-group col-md-8">
 								<label for="titulo" class="col-form-label">Titulo</label> <input
 									type="text" th:field="*{titulo}" class="form-control"
@@ -59,13 +63,17 @@
 
 
 							<div class="form-group col-md-8">
-								<input type="submit" class="btn btn-primary" value="Cadastrar Livro"> 
-								<input type="button" class="btn btn-primary" value="Consultar Livro" onclick="consulta();">
+								<input type="submit" class="btn btn-primary"
+									value="Cadastrar Livro"> <input type="button"
+									class="btn btn-primary" value="Consultar Livro"
+									onclick="consulta();">
 							</div>
-						
+
 						</div>
 
 					</form>
+					<!-- chama o alert -->
+					<div th:replace="fragments/alert"></div>
 				</div>
 			</div>
 		</div>
@@ -74,4 +82,7 @@
 		<div>footer</div>
 	</footer>
 </body>
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+	crossorigin="anonymous"></script>
 </html>
